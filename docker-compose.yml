@@ -1,0 +1,16 @@
+version: '2.1'
+
+networks:
+  pwcalc-net:
+    driver: bridge
+
+services:
+  pwcalc:
+    image: ckevi/pwcalc
+    container_name: pwcalc
+    restart: unless-stopped
+    ports:
+        - "3333:3333"
+    networks:
+      - pwcalc-net
+
