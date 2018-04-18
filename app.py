@@ -34,7 +34,7 @@ def my_form_post():
         return render_template("index.html", password = "Not able to calculate with empty values.")
 @app.route('/api')
 def api(alias = "", secret = ""):
-	alias = request.args.get('alias', alias)
+    alias = request.args.get('alias', alias)
     secret = request.args.get('secret', secret)
     client = docker.from_env()
     container_uuid = "runner"+uuid.uuid4().hex

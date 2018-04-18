@@ -26,4 +26,4 @@ The runner is written in Golang and generates a "password" from the two values i
 
 - ckevi/pwcalc:1.0 : This version doesn't use a runner. Instead it does all the work in the same application. This is generally faster. Also the container does not run as root. This version can also be run in Kubernetes and OpenShift since it doesn't rely on the Docker API.
 
-- ckevi/pwcalc:2.1-root : This version uses the runner (ckevi/pwcalc-runner) to create the password. It must run as root since the Docker UNIX-Socket can only be accessed by a root user in the container.
+- ckevi/pwcalc:2.2-root : This version uses the runner (ckevi/pwcalc-runner) to create the password. It must run as root since the Docker UNIX-Socket can only be accessed by a root user in the container.
