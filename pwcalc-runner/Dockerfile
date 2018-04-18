@@ -1,0 +1,7 @@
+FROM busybox
+LABEL maintainer="CKEVI <admin@purpl3.net>"
+COPY pwcalc /bin/pwcalc
+
+USER nobody
+EXPOSE 8787
+ENTRYPOINT [ "/bin/pwcalc" ]
