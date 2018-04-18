@@ -7,7 +7,7 @@ COPY ./templates /opt/pwcalc/templates
 
 RUN pip install -r /opt/pwcalc/requirements.txt
 
-USER nobody
+#USER nobody
 WORKDIR /opt/pwcalc
 
 EXPOSE 3333

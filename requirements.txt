@@ -3,3 +3,4 @@ itsdangerous==0.24
 Jinja2==2.9.6
 olefile==0.44
 Werkzeug==0.12.1
+docker==3.2.1
