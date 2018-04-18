@@ -9,6 +9,6 @@ func main() {
 	alias    := os.Getenv("PWCALC_ALIAS")
 	secret   := os.Getenv("PWCALC_SECRET")
 	password := combineStrings(alias, secret)
-	fmt.Println(createB64(createSHA(password))[0:16])
+	fmt.Print(createB64(createSHA(password))[0:16])
 }
 
