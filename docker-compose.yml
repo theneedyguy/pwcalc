@@ -6,7 +6,7 @@ networks:
 
 services:
   pwcalc:
-    image: ckevi/pwcalc:2.1-root
+    image: ckevi/pwcalc:2.2-root
     container_name: pwcalc
     restart: unless-stopped
     ports:
