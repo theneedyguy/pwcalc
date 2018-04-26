@@ -2,6 +2,8 @@
 
 PwCalc is an app built with Flask to generate passwords.
 
+![](./images/screenshot.png)
+
 ## How it works
 
 The app combines 2 strings and generates a SHA512 hash. The hash then gets converted to a BASE64 string of which only the first 16 characters are used.
