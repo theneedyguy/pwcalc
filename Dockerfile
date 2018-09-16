@@ -2,6 +2,8 @@ FROM python:3.6
 RUN mkdir -p /opt/pwcalc
 
 COPY ./app.py /opt/pwcalc/
+COPY ./conf.py /opt/pwcalc/
+COPY ./config.json /opt/pwcalc/
 COPY ./requirements.txt /opt/pwcalc/
 COPY ./templates /opt/pwcalc/templates
 
