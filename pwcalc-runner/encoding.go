@@ -1,10 +1,10 @@
 package main
 
 import (
-	"crypto/sha512"
 	"bytes"
-	"encoding/hex"
+	"crypto/sha512"
 	"encoding/base64"
+	"encoding/hex"
 )
 
 func createSHA(text string) string {
@@ -21,7 +21,7 @@ func createB64(hash string) string {
 func combineStrings(alias string, secret string) string {
 	valueArray := []string{alias, secret}
 	var buffer bytes.Buffer
-	for i := 1; i < len(valueArray); i++ {		
+	for i := 1; i < len(valueArray); i++ {
 		buffer.WriteString(alias)
 		buffer.WriteString(secret)
 	}
