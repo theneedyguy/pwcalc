@@ -5,14 +5,6 @@ It combines the 2 and creates a SHA512 hash. The hash then gets converted to Bas
 
 ## How it works
 
-The runner expects 2 environment variables PWCALC_ALIAS and PWCALC_SECRET to create the password. You need to set the 2 values when you start the container. The password then gets written to the stdout. The container then exits and can be removed.
+The runner listens on port 1099 and expects 2 parameters via post request. It then calculates a password out of the 2 values and exposes it as a json value. The main app then reads the result back to the user.
 
-```shell
-docker run -it ckevi/pwcalc-runner -e PWCALC_ALIAS='test' -e PWCALC_SECRET='test'
-```
-
-
-## Future plans
-
-- Use a web listener instead of environment variables. (This might need some more testing. Also the runner would need to run in the same docker network as the main application to ensure communication)
 
