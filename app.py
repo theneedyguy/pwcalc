@@ -2,7 +2,6 @@
 from flask import Flask
 from flask import request
 from flask import render_template
-import docker
 from conf import *
 import hashlib
 import base64
@@ -24,9 +23,9 @@ def my_form_post():
         secret = request.form['secret']
         pwcalc_runner = getConfigValue("runner-container")
         print(pwcalc_runner)
-        URL = "http://"+pwcalc_runner+"/calc"
-        PARAMS = {'alias': alias, 'secret': secret}
-        r = requests.post(url = URL, params = PARAMS)
+        url = "http://"+pwcalc_runner+"/calc"
+        params = {'alias': alias, 'secret': secret}
+        r = requests.post(url = url, params = params)
         return render_template("index.html", password = json.loads(r.text)["Password"])
     else:
         return render_template("index.html", password = "Not able to calculate with empty values.")
@@ -36,9 +35,9 @@ def api(alias = "", secret = ""):
     alias = request.args.get('alias', alias)
     secret = request.args.get('secret', secret)
     pwcalc_runner = getConfigValue("runner-container")
-    URL = "http://"+pwcalc_runner+"/calc"
-    PARAMS = {'alias': alias, 'secret': secret}
-    r = requests.post(url = URL, params = PARAMS)
+    url = "http://"+pwcalc_runner+"/calc"
+    params = {'alias': alias, 'secret': secret}
+    r = requests.post(url = url, params = params)
     return json.loads(r.text)["Password"]
 
 if __name__ == '__main__':
